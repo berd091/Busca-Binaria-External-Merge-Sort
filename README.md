@@ -1,4 +1,4 @@
-# Estrutura-de-Arquivos
+# Busca-Binária
 
 Baixar arquivo BuscaBinCEP.c
 
