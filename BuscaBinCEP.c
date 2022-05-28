@@ -3,8 +3,6 @@
 
 typedef struct _Endereco Endereco;
 
-
-
 struct _Endereco
 {
 	char logradouro[72];
@@ -18,9 +16,10 @@ struct _Endereco
 
 long buscaBin(int inicio, int fim, FILE *f, char* cepProcurado, Endereco* e){
     int meio;
-  
+    int cont = 0;
 
     while(inicio <= fim){
+	cont++;
         meio = (inicio + fim)/2;
         fseek(f, meio*sizeof(Endereco), SEEK_SET);
         fread(e, sizeof(Endereco), 1, f);
@@ -32,6 +31,7 @@ long buscaBin(int inicio, int fim, FILE *f, char* cepProcurado, Endereco* e){
         } else {
             fim = meio - 1;
         }
+	printf("Passos: %d\n\n", cont);
     }
     return -1;
 }
@@ -42,8 +42,8 @@ int main(int argc, char**argv)
 	FILE *f;
 	Endereco e;
 	int qt;
-    long tb;
-    long tr;
+    	long tb;
+    	long tr;
 
 	if(argc != 2)
 	{
