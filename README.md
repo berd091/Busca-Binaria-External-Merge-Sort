@@ -10,4 +10,4 @@ cd Downloads
 
 gcc -o BuscaBinCEP BuscaBinCEP.c
 
-./BuscaBinaria CEP desejado RJ ex: ./BuscaBinCEP 25535490
+./BuscaBinCEP CEP desejado RJ ex: ./BuscaBinCEP 25535490
